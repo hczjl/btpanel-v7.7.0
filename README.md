@@ -15,25 +15,25 @@ curl -sSO http://d.moe.ms/AAAAA/btpanel-v7.7.0/install/install_panel.sh && bash 
 
 # 手动破解：
 
-1，屏蔽手机号
+1. 屏蔽手机号
 
 ```
 sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/static/js/index.js
 ```
 
-2，删除强制绑定手机js文件
+2. 删除强制绑定手机js文件
 
 ```
 rm -f /www/server/panel/data/bind.pl
 ```
 
-3，手动解锁宝塔所有付费插件为永不过期
+3. 手动解锁宝塔所有付费插件为永不过期
 
 文件路径：`/www/server/panel/data/plugin.json`
 
 搜索字符串：`"endtime": -1`全部替换为`"endtime": 999999999999`
 
-4，给plugin.json文件上锁防止自动修复为免费版
+4. 给plugin.json文件上锁防止自动修复为免费版
 
 ```
 chattr +i /www/server/panel/data/plugin.json
@@ -46,3 +46,25 @@ chattr +i /www/server/panel/data/plugin.json
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
+
+# 一键优化脚本
+
+1. 屏蔽手机号
+
+```shell
+wget -O optimize.sh http://f.cccyun.cc/bt/optimize.sh && bash optimize.sh
+```
+
+2. 解锁宝塔所有付费插件为永不过期
+
+```shell
+curl -sSO https://raw.githubusercontent.com/ztkink/bthappy/main/one_key_happy.sh && bash one_key_happy.sh
+```
+
+
+
+
+
+
+
+
