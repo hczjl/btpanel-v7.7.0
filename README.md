@@ -52,13 +52,13 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
 1. 屏蔽手机号
 
 ```shell
-wget -O optimize.sh http://f.cccyun.cc/bt/optimize.sh && bash optimize.sh
+wget -O optimize.sh https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/optimize.sh && bash optimize.sh
 ```
 
 2. 解锁宝塔所有付费插件为永不过期
 
 ```shell
-curl -sSO https://raw.githubusercontent.com/ztkink/bthappy/main/one_key_happy.sh && bash one_key_happy.sh
+curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_happy.sh && bash one_key_happy.sh
 ```
 
 
