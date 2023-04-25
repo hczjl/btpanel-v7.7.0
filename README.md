@@ -47,15 +47,15 @@ chattr +i /www/server/panel/data/plugin.json
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
 
-# 一键优化脚本
+# 一键脚本
 
-1. 屏蔽手机号
+1. 一键优化脚本
 
 ```shell
 wget -O optimize.sh https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/optimize.sh && bash optimize.sh
 ```
 
-2. 解锁宝塔所有付费插件为永不过期
+2. 一键开心
 
 ```shell
 curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_happy.sh && bash one_key_happy.sh
