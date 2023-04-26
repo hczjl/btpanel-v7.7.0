@@ -61,10 +61,15 @@ wget -O optimize.sh https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/
 curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_happy.sh && bash one_key_happy.sh
 ```
 
+# 网络错误可以改hosts文件试试
 
-
-
-
-
-
+```bash
+nano /etc/hosts
+```
+```text
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+```
 
