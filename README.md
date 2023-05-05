@@ -61,6 +61,12 @@ wget -O optimize.sh https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/
 curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_happy.sh && bash one_key_happy.sh
 ```
 
+3. 优化开心二合一脚本
+
+```shell
+curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_optimize.sh && bash one_key_optimize.sh
+```
+
 # 网络错误可以改hosts文件试试
 
 ```bash
