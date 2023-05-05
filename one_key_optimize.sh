@@ -18,7 +18,7 @@ echo "
 +----------------------------------------------------------------------
 | 适用于宝塔面板7.7版本，因为脚本造成的问题请自行负责！
 +----------------------------------------------------------------------
-| 安装脚本：curl -sSO https://btpanel.biji.tk/install/install_panel.sh && bash install_panel.sh
+| 安装脚本：curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/install/install_panel.sh && bash install_panel.sh
 +----------------------------------------------------------------------
 "
 while [ "$go" != 'y' ] && [ "$go" != 'n' ]
@@ -41,7 +41,7 @@ JS_file="/www/server/panel/BTPanel/static/bt.js";
 if [ `grep -c "<script src=\"/static/bt.js\"></script>" $Layout_file` -eq '0' ];then
 	sed -i '/{% block scripts %} {% endblock %}/a <script src="/static/bt.js"></script>' $Layout_file;
 fi;
-wget -q https://btpanel.biji.tk/bt.js -O $JS_file;
+wget -q https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/bt.js -O $JS_file;
 echo "已去除各种计算题与延时等待."
 
 sed -i "/htaccess = self.sitePath+'\/.htaccess'/, /public.ExecShell('chown -R www:www ' + htaccess)/d" /www/server/panel/class/panelSite.py
@@ -81,11 +81,11 @@ if [ -f ${plugin_file} ];then
     chattr -i /www/server/panel/data/plugin.json
     rm /www/server/panel/data/plugin.json
     cd /www/server/panel/data
-    wget https://btpanel.biji.tk/plugin.json
+    wget https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/plugin.json
     chattr +i /www/server/panel/data/plugin.json
 else
     cd /www/server/panel/data
-    wget https://btpanel.biji.tk/plugin.json
+    wget https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/plugin.json
     chattr +i /www/server/panel/data/plugin.json
 fi
 echo -e "插件商城开心结束."
@@ -97,11 +97,11 @@ if [ -f ${repair_file} ];then
     chattr -i /www/server/panel/data/repair.json
     rm /www/server/panel/data/repair.json
     cd /www/server/panel/data
-    wget https://btpanel.biji.tk/repair.json
+    wget https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/repair.json
     chattr +i /www/server/panel/data/repair.json
 else
     cd /www/server/panel/data
-    wget https://btpanel.biji.tk/repair.json
+    wget https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/repair.json
     chattr +i /www/server/panel/data/repair.json
 fi
 echo -e "文件防修改结束."
