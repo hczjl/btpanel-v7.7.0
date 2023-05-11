@@ -1,0 +1,57 @@
+<h1>btpanel-v7.7.0</h1>
+<p>btpanel-v7.7.0-backup  官方原版v7.7.0版本面板备份</p>
+<p><strong>Centos/Ubuntu/Debian安装命令 独立运行环境（py3.7）</strong></p>
+<pre class="hljs language-bash"><code>curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/install/install_panel.sh &amp;&amp; bash install_panel.sh
+</code></pre>
+<p><strong>备用安装链接，适用于不能访问GitHub的服务器。文件公开存放在<a href="http://d.moe.ms/?btpanel-v7.7.0">d.moe.ms</a></strong></p>
+<pre class="hljs"><code>curl -sSO http://d.moe.ms/AAAAA/btpanel-v7.7.0/install/install_panel.sh &amp;&amp; bash install_panel.sh
+</code></pre>
+<h1>手动破解：</h1>
+<ol>
+<li>屏蔽手机号</li>
+</ol>
+<pre class="hljs"><code>sed -i &quot;s|bind_user == 'True'|bind_user == 'XXXX'|&quot; /www/server/panel/BTPanel/static/js/index.js
+</code></pre>
+<ol start="2">
+<li>删除强制绑定手机js文件</li>
+</ol>
+<pre class="hljs"><code>rm -f /www/server/panel/data/bind.pl
+</code></pre>
+<ol start="3">
+<li>手动解锁宝塔所有付费插件为永不过期</li>
+</ol>
+<p>文件路径：<code>/www/server/panel/data/plugin.json</code></p>
+<p>搜索字符串：<code>&quot;endtime&quot;: -1</code>全部替换为<code>&quot;endtime&quot;: 999999999999</code></p>
+<ol start="4">
+<li>给plugin.json文件上锁防止自动修复为免费版</li>
+</ol>
+<pre class="hljs"><code>chattr +i /www/server/panel/data/plugin.json
+</code></pre>
+<p>============================</p>
+<p>！！如需取消屏蔽手机号</p>
+<pre class="hljs"><code>sed -i &quot;s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g&quot; /www/server/panel/BTPanel/static/js/index.js
+</code></pre>
+<h1>一键脚本</h1>
+<ol>
+<li>一键优化脚本</li>
+</ol>
+<pre class="hljs"><code>wget -O optimize.sh https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/optimize.sh &amp;&amp; bash optimize.sh
+</code></pre>
+<ol start="2">
+<li>一键开心</li>
+</ol>
+<pre class="hljs"><code>curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_happy.sh &amp;&amp; bash one_key_happy.sh
+</code></pre>
+<ol start="3">
+<li>优化开心二合一脚本</li>
+</ol>
+<pre class="hljs"><code>curl -sSO https://raw.githubusercontent.com/hczjl/btpanel-v7.7.0/main/one_key_optimize.sh &amp;&amp; bash one_key_optimize.sh
+</code></pre>
+<h1>网络错误可以改hosts文件试试</h1>
+<pre class="hljs language-bash"><code>nano /etc/hosts
+</code></pre>
+<pre class="hljs"><code>199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+</code></pre>
